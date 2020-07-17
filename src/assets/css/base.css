@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,400i,500,600,700,800,900&display=swap");
+@import url("../../../node_modules/@fortawesome/fontawesome-free/css/all.css");
+
+body {
+  background: #f7f7f9 !important;
+  font-family: "Muli", sans-serif !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+.ui.segment {
+  background: transparent !important;
+}
+.ui.segment.clndr-calendars-segment.clndr-left {
+  background: #fff !important;
+}
+
+.ui.container.sidebar {
+  background: #fff;
+  box-shadow: none !important;
+}
+
+@media (max-width: 449px) {
+  .ui.visible.left.sidebar ~ .fixed,
+  .ui.visible.left.sidebar ~ .pusher {
+    transform: translate3d(211px, 0, 0) !important;
+  }
+
+  .swal2-popup,
+  .ui.modal {
+    max-width: 80% !important;
+  }
+
+  .swal2-icon.swal2-warning {
+    border-color: #595959;
+    color: #595959;
+  }
+
+  .ui.flowing.popup {
+    width: 100%;
+    transform: initial !important;
+    margin-bottom: -1px !important;
+    bottom: 0 !important;
+    top: auto !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 !important;
+    z-index: 999;
+    position: fixed !important;
+  }
+
+  .ui.menu:not(.vertical) .right.item,
+  .ui.menu:not(.vertical) .right.menu {
+    display: none !important;
+  }
+}
+
+.infoStatus .ui.label {
+  margin-right: 1rem !important;
+}
+.infoStatus i {
+  margin: 0 !important;
+  min-width: 18px !important;
+}
