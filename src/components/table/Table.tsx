@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EmployessData from '../../Interfaces/employees';
+import Employess from '../../Interfaces/employees';
 
 import {
   StyledTable,
@@ -7,12 +7,12 @@ import {
   RemoveIcon
 } from './styles';
 
+import ModalComponent  from "../modal/index";
+
 
 interface Props {
-  EmployessData: EmployessData[];
+  Employess: Employess[];
 }
-
-
 
 
 const TableHead = () =>{
@@ -31,14 +31,52 @@ const TableHead = () =>{
     )
 }
 
-const TableBody: React.FC<Props> = ({EmployessData}) =>{
 
-  const [ employee, removeEmployee ] = useState(EmployessData); 
+const TableBody: React.FC<Props> = (props) => { 
+
+  
+  const [employess, removeEmployee] = useState<Employess[]>(props.Employess);
+
+  const [openModal, setModal] = useState<boolean>(false);
+  const [id, setId] = useState<number>();
+
+    const showModal = (id:number) => {
+      setModal(true);
+      setId(id);
+    }
+
+    const closeModal = (op:boolean, id?:number) => {
+        (op) ? deleteEmployee(id) : setModal(false);
+    }
+
+    const deleteEmployee = (id?:number) => {
+        setModal(false);
+  
+       var emp =  employess.filter((employee) =>{
+          return employee.id !== id;
+        })
+
+       removeEmployee(emp);
+
+    }
+
+    const onClickModal = (id:number) =>{
+      showModal(id);
+    }
 
   return (
+    <>
+    <ModalComponent
+    id={id}
+    open={openModal}
+    onClose={ (op:boolean, id?:number) => { closeModal(op, id)}}
+    clean
+    title="Tem certeza que deseja deletar esse funcionario? "
+    >
+    </ModalComponent>
     <tbody>
     { 
-    EmployessData.map((EmployessData, index) => 
+    employess.map((EmployessData, index) => 
       <tr key={index}>
           <td>{EmployessData.id}</td>
           <td>{EmployessData.nome}</td>
@@ -46,20 +84,25 @@ const TableBody: React.FC<Props> = ({EmployessData}) =>{
           <td>{EmployessData.salario}</td>
           <td>{EmployessData.desconto}</td>
           <td>{EmployessData.dependentes}</td>
-          <td><RemoveButton><RemoveIcon className="fas fa-times"></RemoveIcon></RemoveButton></td>
+          <td><RemoveButton onClick={ () =>{
+                onClickModal(EmployessData.id);
+          }}><RemoveIcon className="fas fa-times"></RemoveIcon></RemoveButton></td>
       </tr>
-                      )
-      }
-</tbody>
+      )
+    }
+  </tbody>
+  </>
   )
 }
 
-const TableComponent: React.FC<Props> = ({EmployessData}) => {
+const TableComponent: React.FC<Props> = (props) => {
+
+  const [employess] = useState<Employess[]>(props.Employess);
 
     return(
       <StyledTable>
         <TableHead></TableHead>
-        <TableBody EmployessData={ EmployessData } ></TableBody>
+        <TableBody Employess={ employess }></TableBody>
       </StyledTable>
     );
 }
