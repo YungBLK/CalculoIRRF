@@ -26,7 +26,7 @@ const _Form: React.FC<IProps> = () => {
       let dependentesCost =  dependentesValue * newEmployee.dependentes;
       let salarioBaseIRRF = ( newEmployee.salario - newEmployee.desconto ) - (dependentesCost);
 
-       alert(salarioBaseIRRF) // (V)
+       // (V)
 
       //  Até R$ 1.903,98 Isento R$ 0,00
       //  De R$ 1.903,99 até R$ 2.826,65 7,5% R$ 142,80
