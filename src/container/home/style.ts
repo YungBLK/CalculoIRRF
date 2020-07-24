@@ -1,31 +1,30 @@
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
-        padding-right: 15px;
-        padding-left: 15px;
+      
         margin-right: auto;
         margin-left: auto;
-        width: 1170px;
+      
         display: flex;
         justify-content: space-between;
 
         @media (min-width: 768px) {
             flex-direction: column;
 
-            .container {
+
                 width: 750px;
-            }
+            
         }
         @media (min-width: 992px) {
-            .container {
+            
                 width: 970px;
-            }
+            
         }
         @media (min-width: 1200px) {
-            .container {
+            
                 width: 1170px;
-            }
+            
         }
 `;
 export const ContentDiv = styled.div`
@@ -58,6 +57,24 @@ width: 4rem;
 height: 2.3rem;
 justify-content: center;
 align-items: center;
+`;
+export const AnchorButtonAdd = styled(Link)`
+    display: flex;
+    text-decoration: none;
+    background: rgb(0,97,255);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgb(255,255,255);
+    border-image: initial;
+    border-radius: 5rem;
+    width: 50%;
+    height: 4rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
 `;
 export const AddIcon = styled.i`
     color: white;

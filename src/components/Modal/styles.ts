@@ -44,7 +44,7 @@ export const ModalContent = styled.div`
         flex-direction: column;
         width: 100%;
         pointer-events: auto;
-        background-color: #fff;
+        background-color: #464555;
         background-clip: padding-box;
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 0.3rem;
@@ -62,9 +62,10 @@ export const ModalHeader = styled.div`
 
 export const PrimaryButton = styled.button`
         background: rgb(0,97,255);
-        border: 0.5px solid transparent;
+        border: 0.5px solid #ffffff;
         padding: .375rem .75rem;
         font-size: 1rem;
+        border-radius: 14px;
         display: inline-block;
         font-weight: 400;
         text-align: center;
@@ -73,9 +74,10 @@ export const PrimaryButton = styled.button`
 `;
 export const SecondaryButton = styled.button`
         background: #464555;
-        border: 0.5px solid transparent;
+        border: 0.5px solid white;
         padding: .375rem .75rem;
         font-size: 1rem;
+        border-radius: 14px;
         display: inline-block;
         font-weight: 400;
         text-align: center;
@@ -89,7 +91,7 @@ export const ModalTitle = styled.h5`
         text-align: center;
         width: auto;
         font-size: 1.5rem;
-        color: rgb(70,69,85);
+        color: rgb(255, 255, 255);
 `;
 export const ModalBody = styled.div`
         position: relative;

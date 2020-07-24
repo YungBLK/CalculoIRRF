@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Home from "./container/home";
+import TabelaIr from "./container/TabelaIR";
 import Header from "./container/header";
 
 const Rounting = () => {
@@ -16,8 +17,8 @@ const Rounting = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/tabela-do-imposto-de-renda">
-          <Home />
+        <Route exact path="/tabela-irrf">
+          <TabelaIr />
         </Route>
       </Switch>
     </Router>

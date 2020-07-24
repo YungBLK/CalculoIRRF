@@ -24,8 +24,8 @@ const Header = () => {
                 </AnchorImg>
                 <div>
                     <Menu>
-                        <Option><Anchor to="/">Calculo do IRRF</Anchor></Option>
-                        <Option><Anchor to="/tabela-do-imposto-de-renda">Tabela do IR</Anchor></Option>
+                        <Option><Anchor to="/">Registrar Funcionario</Anchor></Option>
+                        <Option><Anchor to="/tabela-irrf">Tabelas e cálculos do IRRF</Anchor></Option>
                     </Menu>
                 </div>
             </Container>

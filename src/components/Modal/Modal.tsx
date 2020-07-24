@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 
 import {  
      ModalBackDrop,
-     ModalBody,
      ModalWrapper,
      ModalDialog,
      ModalContent,
@@ -46,9 +45,6 @@ const ModalComponent: React.FC<IProps> = (props) => {
                              <ModalHeader>
                                      <ModalTitle>{title}</ModalTitle>
                              </ModalHeader>
-                             <ModalBody>
-
-                             </ModalBody>
                              <ModalFooter>
                               <PrimaryButton onClick={ () => onClose(true, id)} type="button">Salvar</PrimaryButton>
                               <SecondaryButton onClick={ () => onClose(false, id)}>Voltar</SecondaryButton>

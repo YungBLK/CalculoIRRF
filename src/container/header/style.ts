@@ -55,6 +55,7 @@ export const Menu = styled.ul`
     display: flex;
     justify-content: center;
     list-style: none;
+    padding: 0;
 `;
 export const Option = styled.li`
     margin-right: 1.5rem;
