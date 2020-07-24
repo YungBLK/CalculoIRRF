@@ -39,6 +39,7 @@ const _Form: React.FC<IProps> = () => {
       let descontoIRRF = 0;
 
       if(salarioBaseIRRF <= 1903.98){
+          console.log('aqui', salarioBaseIRRF);
           descontoIRRF = (salarioBaseIRRF * 0);
       }else if (salarioBaseIRRF >= 1903.99 && salarioBaseIRRF <= 2826.65){
         descontoIRRF =   (salarioBaseIRRF * (7.5/100)) - 142.80;
@@ -49,7 +50,10 @@ const _Form: React.FC<IProps> = () => {
       }else{
         descontoIRRF = (salarioBaseIRRF * (27.5/100)) - 869.36;
       }
-      
+
+      newEmployee.IRPF = descontoIRRF;
+
+
      dispatch({type: 'employees/create', payload: newEmployee});
   } 
   
